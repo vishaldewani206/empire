@@ -1,0 +1,110 @@
+.modal {
+  width: 95%;
+  height: 80%;
+  max-width: 1200px;
+  max-height: 600px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  background: white;
+  border-radius: 1.2rem;
+  display: flex;
+  overflow-x: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.486);
+  padding: 2rem;
+}
+.img {
+  width: 40%;
+}
+.text {
+  width: 60%;
+  padding-left: 1rem;
+  color: var(--black);
+}
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 2rem;
+  display: flex;
+  cursor: pointer;
+  color: var(--black);
+}
+.close:hover {
+  color: black;
+}
+
+.productImage {
+  width: 100%;
+  height: 95%;
+  object-fit: contain;
+}
+.text h1,
+.text p {
+  margin-bottom: 1rem;
+}
+.text p {
+  font-size: 1.2rem;
+}
+.modalStar {
+  color: gold;
+  margin-right: 5px;
+  font-size: 1.5rem;
+}
+.modalRating {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.priceRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actionBtns {
+  margin-top: 2rem;
+}
+.action {
+  width: 140px;
+  height: 40px;
+  font-size: 1.2rem;
+  border: none;
+  border: 2px solid var(--black);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.buyNow {
+  margin-right: 1rem;
+  background: var(--secondary);
+}
+.addToCart {
+  background: var(--primary);
+}
+
+@media screen and (max-width: 786px) {
+  .modal {
+    flex-direction: column;
+    align-items: center;
+    height: 95%;
+  }
+  .img {
+    width: 80%;
+    margin-bottom: 2rem;
+    height: 60%;
+  }
+  .text {
+    width: 100%;
+  }
+  .text h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .action {
+    width: 45%;
+  }
+}

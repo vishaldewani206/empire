@@ -1,0 +1,31 @@
+.hero {
+  height: calc(100vh - 80px);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heroLogo {
+  width: 35%;
+  min-width: 350px;
+}
+.shopNow {
+  width: 160px;
+  height: 40px;
+  font-size: 1.5rem;
+  border: none;
+  background: var(--primary);
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.shopNow:hover {
+  background: var(--secondary);
+}
+@media screen and (max-width: 480px) {
+  .heroLogo {
+    min-width: 250px;
+    width: 10%;
+  }
+}
