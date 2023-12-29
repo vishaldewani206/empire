@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import logoPrimary from '../assets/logo-primary.png';
-import { IoSearch } from 'react-icons/io5';
 import './Navbar.css';
 function Navbar({ apiUrl, setFindSearch }) {
   const [isOpen, setIsOpen] = useState(false);

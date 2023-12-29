@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 function App() {
   const [newCat, setNewCat] = useState('https://fakestoreapi.com/products');
   const [show, setShow] = useState(true);
-  const [findSearch, setFindSearch] = useState('');
   const setCategory = (u) => {
     setNewCat(u);
   };
@@ -32,10 +31,10 @@ function App() {
           visible={show}
         />
       ) : (
-        <Navbar apiUrl={setCategory} setFindSearch={setFindSearch} />
+        <Navbar apiUrl={setCategory}  />
       )}
       {show ? undefined : <Hero />}
-      {show ? undefined : <Trending apiUrl={newCat} findSearch={findSearch} />}
+      {show ? undefined : <Trending apiUrl={newCat} />}
     </div>
   );
 }
