@@ -1,7 +1,8 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import logoPrimary from '../assets/logo-primary.png';
 import './Navbar.css';
-function Navbar({ apiUrl, setFindSearch }) {
+import { motion } from 'framer-motion';
+function Navbar({ apiUrl }) {
   const [isOpen, setIsOpen] = useState(false);
   function handleHamburger() {
     setIsOpen((f) => !f);
@@ -21,11 +22,29 @@ function Navbar({ apiUrl, setFindSearch }) {
       );
     }
   }
-
+  const fadeInVariants = {
+    initial: {
+      opacity: 0,
+      y: -50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    hover: {
+      scale: 1.2,
+    },
+    tap: {
+      scale: 1.1,
+    },
+  };
   return (
     <nav>
       <div className='logo'>
-        <img
+        <motion.img
+          initial={{ scale: 0.5 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.7 }}
           src={logoPrimary}
           alt='logo'
           onClick={handleCategory}
@@ -41,21 +60,83 @@ function Navbar({ apiUrl, setFindSearch }) {
         <div className='lines'></div>
       </div>
       <div className={`links ${isOpen ? 'open' : ''}`}>
-        <h3 onClick={handleCategory} data-cat='/'>
+        {/* <MotionConfig> */}
+        <motion.a
+          href='#trending'
+          variants={fadeInVariants}
+          initial='initial'
+          animate='animate'
+          whileHover='hover'
+          whileTap='tap'
+          transition={{
+            delay: 0.05,
+          }}
+          onClick={handleCategory}
+          data-cat='/'
+        >
           All Products
-        </h3>
-        <h3 onClick={handleCategory} data-cat="men's%20clothing">
+        </motion.a>
+        <motion.a
+          href='#trending'
+          variants={fadeInVariants}
+          initial='initial'
+          animate='animate'
+          whileHover='hover'
+          whileTap='tap'
+          transition={{
+            delay: 0.15,
+          }}
+          onClick={handleCategory}
+          data-cat="men's%20clothing"
+        >
           Men's Clothes
-        </h3>
-        <h3 onClick={handleCategory} data-cat="women's%20clothing">
+        </motion.a>
+        <motion.a
+          href='#trending'
+          variants={fadeInVariants}
+          initial='initial'
+          animate='animate'
+          whileHover='hover'
+          whileTap='tap'
+          transition={{
+            delay: 0.2,
+          }}
+          onClick={handleCategory}
+          data-cat="women's%20clothing"
+        >
           Women's Clothes
-        </h3>
-        <h3 onClick={handleCategory} data-cat='jewelery'>
+        </motion.a>
+        <motion.a
+          href='#trending'
+          variants={fadeInVariants}
+          initial='initial'
+          animate='animate'
+          whileHover='hover'
+          whileTap='tap'
+          transition={{
+            delay: 0.25,
+          }}
+          onClick={handleCategory}
+          data-cat='jewelery'
+        >
           Jewelry
-        </h3>
-        <h3 onClick={handleCategory} data-cat='electronics'>
+        </motion.a>
+        <motion.a
+          href='#trending'
+          variants={fadeInVariants}
+          initial='initial'
+          animate='animate'
+          whileHover='hover'
+          whileTap='tap'
+          transition={{
+            delay: 0.3,
+          }}
+          onClick={handleCategory}
+          data-cat='electronics'
+        >
           Electronics
-        </h3>
+        </motion.a>
+        {/* </MotionConfig> */}
       </div>
     </nav>
   );

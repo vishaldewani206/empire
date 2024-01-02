@@ -3,6 +3,7 @@ import ApiCall from './ApiCall';
 import { FaStar } from 'react-icons/fa';
 import './Trending.css';
 import Modal from './Modal';
+import { motion } from 'framer-motion';
 const Trending = ({ apiUrl, findSearch }) => {
   const product = ApiCall(apiUrl);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,15 +15,38 @@ const Trending = ({ apiUrl, findSearch }) => {
       document.body.style.overflow = '';
     }
   }, [isOpen]);
+  const showVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.5,
+    },
+    animate: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        // duration: 0.7 ,
+        delay: 0.05 * i,
+      },
+    }),
+  };
   return (
     product && (
       <div>
-        <h1 className='heading'>Trending</h1>
+        <h1 className='heading' id='trending'>
+          Trending
+        </h1>
         <div className='items'>
           {product.map((e, i) => {
             return (
-              <div
+              <motion.div
                 className='item'
+                variants={showVariants}
+                initial='initial'
+                whileInView='animate'
+                viewport={{
+                  once: true,
+                }}
+                custom={i}
                 key={e.id}
                 onClick={() => {
                   setIsOpen(true);
@@ -52,7 +76,7 @@ const Trending = ({ apiUrl, findSearch }) => {
                 <div className='btn'>
                   <button>Add To Cart</button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

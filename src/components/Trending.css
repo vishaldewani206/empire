@@ -19,6 +19,7 @@
   overflow: hidden;
   margin-block: 1rem;
   margin-inline: 0.4rem;
+  cursor: pointer;
 }
 .productDetails {
   margin: 0.7rem 0.5rem;

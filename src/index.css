@@ -12,6 +12,9 @@
   box-sizing: border-box;
   font-family: 'Dosis', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: var(--black);
   background: var(--white);

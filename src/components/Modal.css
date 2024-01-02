@@ -1,12 +1,25 @@
+.blur {
+  display: grid;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  padding: 2rem;
+  place-items: center;
+  backdrop-filter: blur(8px);
+}
 .modal {
   width: 95%;
   height: 80%;
   max-width: 1200px;
   max-height: 600px;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  /* position: fixed; */
+  /* transform: translate(-50%, -50%); */
+  /* top: 50%; */
+  /* left: 50%; */
   z-index: 5;
   background: white;
   border-radius: 1.2rem;

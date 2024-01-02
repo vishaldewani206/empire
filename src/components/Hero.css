@@ -20,9 +20,7 @@
   cursor: pointer;
   margin-top: 1rem;
 }
-.shopNow:hover {
-  background: var(--secondary);
-}
+
 @media screen and (max-width: 480px) {
   .heroLogo {
     min-width: 250px;
